@@ -6,3 +6,8 @@ This small AutoIT Script creates a GUI window to assist with the use of Microsof
 This tool (very quickly) queries ActiveDirectory for all computers, populating an auto-fill dropdown selection box. A technician may manually type in the PC name (helpful if not yet listed in ActiveDirectory), or choose from the list and then click the super large button, "Remote Assist" - or leave the field blank and press the button, then select from their list of PCs in their remote session history.
 
 It's quite a bit easier than fumbling through the command line, and a little bit faster for most.
+
+============
+
+As stated, this script was created in the AutoIT scripting language. To compile, one must use the AutoIT compiler which is freely downloaded from:
+http://autoitscript.com/
