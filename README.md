@@ -11,3 +11,5 @@ It's quite a bit easier than fumbling through the command line, and a little bit
 
 As stated, this script was created in the AutoIT scripting language. To compile, one must use the AutoIT compiler which is freely downloaded from:
 http://autoitscript.com/
+
+The current version of the script has the domain name you wish to connect to hardcoded in to the script. This may change in future versions.
