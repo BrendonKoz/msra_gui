@@ -28,14 +28,14 @@ $filter[0] = 'computer';
 $objDomain.Filter = $filter;
 
 For $objComputer In $objDomain
- $computer = $objComputer.Name;
+	$computer = $objComputer.Name;
 
- ;Add a string delimiter
- If StringLen($strComputers) > 1 Then
-	 $strComputers = $strComputers & '|';
- EndIf
+	;Add a string delimiter
+	If StringLen($strComputers) > 1 Then
+		$strComputers = $strComputers & '|';
+	EndIf
 
- $strComputers = $strComputers & $computer;
+	$strComputers = $strComputers & $computer;
 Next
 
 ; Build the GUI
@@ -65,19 +65,19 @@ WEnd
 GUIDelete($window);
 
 Func _Edit_Changed()
-    _GUICtrlComboBox_AutoComplete($combobox);
+	_GUICtrlComboBox_AutoComplete($combobox);
 EndFunc
 
 Func WM_COMMAND($hWnd, $iMsg, $iwParam, $ilParam)
-    #forceref $hWnd, $iMsg
-    Local $hWndFrom, $iIDFrom, $iCode, $hWndCombo
-    If Not IsHWnd($combobox) Then $hWndCombo = GUICtrlGetHandle($combobox)
-    $hWndFrom = $ilParam
-    $iIDFrom = BitAND($iwParam, 0xFFFF) ; Low Word
-    $iCode = BitShift($iwParam, 16) ; Hi Word
-    Switch $hWndFrom
-        Case $combobox, $hWndCombo
-            Switch $iCode
+	#forceref $hWnd, $iMsg
+	Local $hWndFrom, $iIDFrom, $iCode, $hWndCombo
+	If Not IsHWnd($combobox) Then $hWndCombo = GUICtrlGetHandle($combobox)
+	$hWndFrom = $ilParam
+	$iIDFrom = BitAND($iwParam, 0xFFFF) ; Low Word
+	$iCode = BitShift($iwParam, 16) ; Hi Word
+	Switch $hWndFrom
+		Case $combobox, $hWndCombo
+			Switch $iCode
 				Case $CBN_EDITCHANGE
 					_Edit_Changed();	Call "_Edit_Changed" Func
 			EndSwitch
@@ -85,4 +85,3 @@ Func WM_COMMAND($hWnd, $iMsg, $iwParam, $ilParam)
 
 	Return $GUI_RUNDEFMSG
 EndFunc
-
